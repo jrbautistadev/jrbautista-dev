@@ -561,7 +561,7 @@ export default function Home() {
             <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
               <p className="font-medium">Address</p>
               <p className="mt-2 text-sm text-zinc-300">
-                Balagmanok, Bacong, Negros Oriental, 6216
+                Balagmanok, Bacong, Negros Oriental, Philippines 6216
               </p>
             </div>
             <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">

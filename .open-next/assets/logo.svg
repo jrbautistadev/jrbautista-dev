@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  
+  <!-- Black circular background -->
+  <circle cx="100" cy="100" r="100" fill="#000000"/>
+  
+  <!-- More square/blocky J -->
+  <!-- Vertical stem of J -->
+  <rect x="95" y="50" width="40" height="90" fill="#facc15"/>
+  
+  <!-- Bottom horizontal bar -->
+  <rect x="60" y="115" width="75" height="40" fill="#facc15"/>
+  
+  <!-- Left vertical hook -->
+  <rect x="60" y="100" width="40" height="55" fill="#facc15"/>
+</svg>
