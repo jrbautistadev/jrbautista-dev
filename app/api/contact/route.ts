@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { LRUCache } from 'lru-cache';
+
+export const runtime = 'edge';
 
 // Rate limiter: 3 requests per hour per IP
 const rateLimit = new LRUCache<string, number>({
@@ -11,14 +13,15 @@ const rateLimit = new LRUCache<string, number>({
 export async function POST(request: Request) {
   try {
     // Check for environment variables
-    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
-      console.error('Missing GMAIL_USER or GMAIL_APP_PASSWORD environment variables');
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Missing RESEND_API_KEY environment variable');
       return NextResponse.json(
         { error: 'Server configuration error: Missing email credentials' },
         { status: 500 }
       );
     }
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const ip = request.headers.get('x-forwarded-for') || 'unknown';
     
     // Rate limiting check
@@ -49,17 +52,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
-
-    const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // Send to yourself
+    // Send email via Resend
+    // Note: 'from' must be a verified domain or the default 'onboarding@resend.dev' if testing
+    // For production, verify your domain in Resend dashboard
+    const { error } = await resend.emails.send({
+      from: 'Contact Form <onboarding@resend.dev>', // Update this after verifying domain
+      to: 'jrbautista.dev@gmail.com', // Replace with your verified email
       replyTo: email,
       subject: `New Contact Form Submission: ${subject}`,
       text: `
@@ -78,9 +76,15 @@ export async function POST(request: Request) {
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    if (error) {
+      console.error('Resend error:', error);
+      return NextResponse.json(
+        { error: `Failed to send email: ${error.message}` },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
       { message: 'Email sent successfully' },

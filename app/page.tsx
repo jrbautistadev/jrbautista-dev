@@ -8,6 +8,7 @@ export default function Home() {
   const [showTop, setShowTop] = useState(false)
   const [activeId, setActiveId] = useState<string>('home')
   
+  /*
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,6 +53,7 @@ export default function Home() {
       setIsSubmitting(false)
     }
   }
+  */
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 300)
@@ -577,6 +579,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            {/* 
             <form onSubmit={handleSubmit} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
@@ -614,7 +617,6 @@ export default function Home() {
                   placeholder="Message"
                   className="sm:col-span-2 h-32 w-full resize-none rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm outline-none placeholder:text-zinc-500 focus:border-yellow-500"
                 />
-                {/* Honeypot field - hidden from users */}
                 <input
                   type="text"
                   name="gotcha"
@@ -640,7 +642,8 @@ export default function Home() {
                 )}
               </div>
             </form>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+            */}
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 lg:col-span-2">
               <p className="font-medium text-yellow-400">Availability</p>
               <p className="mt-2 text-sm text-zinc-300">
                 Open to <span className="text-yellow-400">part‑time</span>, freelance, gig work, and collaborations. Remote‑friendly (GMT+8). Typical response within 24 hours.
