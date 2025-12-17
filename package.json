@@ -16,8 +16,7 @@
     "lru-cache": "^11.2.4",
     "next": "16.0.10",
     "react": "19.2.1",
-    "react-dom": "19.2.1",
-    "resend": "^6.6.0"
+    "react-dom": "19.2.1"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "^1.14.6",
