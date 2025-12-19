@@ -203,7 +203,7 @@ export default function Home() {
         </div>
       </header>
       <main className="mx-auto max-w-6xl px-6 md:py-16">
-        <section id="home" className="rounded-3xl bg-zinc-950 md:px-8 px-3 shadow-lg">
+        <section id="home" className="rounded-3xl bg-zinc-950 md:px-8 py-4 px-3 shadow-lg">
           <div className="flex flex-col-reverse items-center gap-10 md:flex-row md:items-center md:justify-between">
             <div className="md:max-w-xl text-center md:text-left">
               <p className="text-sm uppercase tracking-widest text-zinc-400">
@@ -255,12 +255,12 @@ export default function Home() {
             </div>
             <div className="w-full md:w-auto">
               <Image
-                src="/avatar-2.svg"
+                src="/portfolio-profile.png"
                 alt="Avatar"
                 width={300}
                 height={300}
                 priority
-                className="mx-auto h-auto w-40 sm:w-80 md:w-[300px]"
+                className="mx-auto h-auto w-32 sm:w-64 md:w-[240px]"
               />
             </div>
           </div>
