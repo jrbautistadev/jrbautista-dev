@@ -389,7 +389,7 @@ export default function Home() {
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-2">
                 {[
-                  "4+ Years Experience",
+                  "5+ Years Experience",
                   "Full‑stack",
                   "Part-Time",
                   "Remote Friendly",
@@ -418,18 +418,18 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              <div className="mt-6 md:mt-10 flex items-center gap-3">
+              <div className="mt-6 md:mt-10 flex sm:flex-row flex-col items-center gap-3">
                 <a
                   href="#contact"
                   onClick={(e) => scrollToSection(e, "#contact")}
-                  className="rounded-full bg-yellow-500 px-5 py-2.5 font-medium text-black shadow-sm transition-colors hover:bg-yellow-400"
+                  className="rounded-full sm:w-auto w-full bg-yellow-500 px-5 py-2.5 font-medium text-black shadow-sm transition-colors hover:bg-yellow-400"
                 >
                   Hire Me
                 </a>
                 <a
                   href="#works"
                   onClick={(e) => scrollToSection(e, "#works")}
-                  className="rounded-full border border-zinc-700 px-5 py-2.5 font-medium transition-colors hover:bg-zinc-900"
+                  className="rounded-full sm:w-auto w-full border border-zinc-700 px-5 py-2.5 font-medium transition-colors hover:bg-zinc-900"
                 >
                   My Works
                 </a>
@@ -437,13 +437,13 @@ export default function Home() {
                   href="/JohnReyBautista-CV_Resume2026.pdf"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex rounded-full bg-yellow-500 px-5 py-2.5 font-medium text-black hover:bg-yellow-400"
+                  className="rounded-full sm:w-auto w-full bg-yellow-500 px-5 py-2.5 font-medium text-black shadow-sm transition-colors hover:bg-yellow-400"
                 >
                   See Full Resume
                 </a>
               </div>
             </div>
-            <div className="w-full rounded-full overflow-hidden md:w-auto">
+            <div className="rounded-full overflow-hidden md:w-auto">
               <Image
                 src="/JRB-Profile.png"
                 alt="Avatar"
@@ -465,7 +465,7 @@ export default function Home() {
               <h2 className="text-xl font-semibold font-roboto">About</h2>
               <p className="mt-3 text-sm leading-6 text-zinc-300">
                 Versatile web developer with{" "}
-                <span className="text-yellow-400">4+ years</span> of hands‑on
+                <span className="text-yellow-400">5+ years</span> of hands‑on
                 experience building systems and modern web applications. Driven
                 to learn, adapt, and excel with emerging technologies.
               </p>
@@ -1003,7 +1003,7 @@ export default function Home() {
             >
               <p className="font-medium text-yellow-400">Send a Message</p>
               <p className="mt-2 text-sm text-zinc-300">
-                Looking forward to hearing from you!
+                Let’s Build Something Great!
               </p>
               <div className="grid gap-4 mt-4 sm:grid-cols-2">
                 <input
@@ -1098,7 +1098,7 @@ export default function Home() {
               </div>
               <p className="mt-7 font-medium">Summary</p>
               <ul className="mt-2 space-y-1 text-sm text-zinc-300">
-                <li>4+ years building full‑stack web applications</li>
+                <li>5+ years building full‑stack web applications</li>
                 <li>Focus on finance, landing, admin dashboards</li>
                 <li>
                   Core stack: Laravel, Vue, Next.js/React, Tailwind, MySQL, AWS
