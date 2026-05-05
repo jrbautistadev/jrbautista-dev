@@ -20,6 +20,26 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Contact Form Setup
+
+Copy `.env.example` to `.env.local` and fill in these values:
+
+```bash
+cp .env.example .env.local
+```
+
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`: Google reCAPTCHA v2 site key
+- `RECAPTCHA_SECRET_KEY`: Google reCAPTCHA v2 secret key
+- `SMTP_USER`: your Gmail address
+- `SMTP_PASS`: your Gmail app password
+- `CONTACT_TO_EMAIL`: inbox that receives contact submissions
+
+Notes:
+
+- Use Google App Passwords, not your normal Gmail password.
+- For this Cloudflare deployment, the contact route uses a Worker-compatible SMTP client.
+- In production, add the same secrets to your Cloudflare environment before deploying.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
